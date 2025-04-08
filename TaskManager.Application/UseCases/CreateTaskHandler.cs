@@ -1,4 +1,5 @@
-﻿using TaskManager.Application.UseCases.Commands;
+﻿using Microsoft.Extensions.Logging;
+using TaskManager.Application.UseCases.Commands;
 using TaskManager.Core.Entities;
 using TaskManager.Core.Interfaces;
 
@@ -8,11 +9,13 @@ public class CreateTaskHandler
 {
     private readonly ITaskRepository _taskRepo;
     private readonly IProjectRepository _projectRepo;
+    private readonly ILogger<CreateTaskHandler> _logger;
 
-    public CreateTaskHandler(ITaskRepository taskRepo, IProjectRepository projectRepo)
+    public CreateTaskHandler(ITaskRepository taskRepo, IProjectRepository projectRepo, ILogger<CreateTaskHandler> logger)
     {
         _taskRepo = taskRepo;
         _projectRepo = projectRepo;
+        _logger = logger;
     }
 
     public async Task<TaskItem> HandleAsync(CreateTaskCommand command)
@@ -36,6 +39,7 @@ public class CreateTaskHandler
         };
 
         await _taskRepo.AddAsync(task);
+        _logger.LogInformation("Tarefa criada: {Title} (Projeto ID: {ProjectId})", task.Title, task.ProjectId);
         return task;
     }
 }

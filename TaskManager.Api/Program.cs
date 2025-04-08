@@ -1,11 +1,12 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using TaskManager.Api.Endpoints;
+using TaskManager.Api.Infrastructure.Startup;
 using TaskManager.Application.UseCases;
 using TaskManager.Application.Validators;
 using TaskManager.Core.Interfaces;
 using TaskManager.Infrastructure.Data;
-using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,5 +59,8 @@ app.MapUserEndPoints();
 app.MapProjectEndpoints();
 app.MapTaskEndpoints();
 app.MapReportEndpoints();
+
+//Migration
+await app.EnsureDatabaseMigratedAsync();
 
 app.Run();
