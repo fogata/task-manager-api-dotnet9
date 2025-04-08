@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using TaskManager.Application.DTOs;
 using TaskManager.Application.UseCases;
 using TaskManager.Application.UseCases.Commands;
@@ -5,9 +6,16 @@ using TaskManager.Core.Interfaces;
 using TaskManager.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<IUserRepository, InMemoryUserRepository>();
+
+// Adiciona EF Core com PostgreSQL
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
+
+// Injeção de dependência
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<CreateUserHandler>();
 
 var app = builder.Build();
