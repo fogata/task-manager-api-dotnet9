@@ -1,9 +1,9 @@
-﻿namespace TaskManager.Application.DTOs;
+﻿using TaskManager.Core.Entities;
 
-public class CreateUserDto
+namespace TaskManager.Application.DTOs;
+
+public record CreateUserDto(string Username)
 {
-    public string Username { get; set; } = string.Empty;
-
     public static explicit operator User(CreateUserDto dto)
         => new() { Username = dto.Username };
 }

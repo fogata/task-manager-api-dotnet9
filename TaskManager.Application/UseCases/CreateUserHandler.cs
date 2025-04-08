@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TaskManager.Application.DTOs;
+﻿using TaskManager.Application.DTOs;
 using TaskManager.Application.UseCases.Commands;
+using TaskManager.Core.Entities;
+using TaskManager.Core.Interfaces;
 
 namespace TaskManager.Application.UseCases;
 

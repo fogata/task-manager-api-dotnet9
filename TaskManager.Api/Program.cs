@@ -1,6 +1,6 @@
-using TaskManager.Application.Commands;
 using TaskManager.Application.DTOs;
-using TaskManager.Application.Handlers;
+using TaskManager.Application.UseCases;
+using TaskManager.Application.UseCases.Commands;
 using TaskManager.Core.Interfaces;
 using TaskManager.Infrastructure.Data;
 
