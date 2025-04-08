@@ -1,4 +1,5 @@
-﻿using TaskManager.Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using TaskManager.Core.Entities;
 using TaskManager.Core.Interfaces;
 
 namespace TaskManager.Infrastructure.Data;
@@ -22,4 +23,10 @@ public class UserRepository : IUserRepository
     {
         return await _context.Users.FindAsync(id);
     }
+
+    public async Task<IEnumerable<User>> GetAllAsync()
+    {
+        return await _context.Users.ToListAsync();
+    }
+
 }
