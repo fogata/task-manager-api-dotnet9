@@ -213,20 +213,25 @@ var assemblies = [
   {
     "name": "TaskManager.Api",
     "classes": [
-      { "name": "Program", "rp": "TaskManager.Api_Program.html", "cl": 41, "ucl": 0, "cal": 41, "tl": 23, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Program", "rp": "TaskManager.Api_Program.html", "cl": 12, "ucl": 0, "cal": 12, "tl": 22, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Api.Endpoints.ProjectEndpoints", "rp": "TaskManager.Api_ProjectEndpoints.html", "cl": 25, "ucl": 10, "cal": 35, "tl": 50, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Api.Endpoints.ReportEndpoints", "rp": "TaskManager.Api_ReportEndpoints.html", "cl": 8, "ucl": 7, "cal": 15, "tl": 23, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Api.Endpoints.TaskEndpoints", "rp": "TaskManager.Api_TaskEndpoints.html", "cl": 49, "ucl": 34, "cal": 83, "tl": 106, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Api.Endpoints.TaskEndpoints", "rp": "TaskManager.Api_TaskEndpoints.html", "cl": 51, "ucl": 36, "cal": 87, "tl": 106, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Api.Endpoints.UserEndPoints", "rp": "TaskManager.Api_UserEndPoints.html", "cl": 16, "ucl": 1, "cal": 17, "tl": 28, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Api.Infrastructure.Startup.MigrationInitializer", "rp": "TaskManager.Api_MigrationInitializer.html", "cl": 5, "ucl": 0, "cal": 5, "tl": 13, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Api.Extensions.ApplicationBuilderExtensions", "rp": "TaskManager.Api_ApplicationBuilderExtensions.html", "cl": 18, "ucl": 3, "cal": 21, "tl": 39, "cb": 1, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Api.Extensions.HostBuilderExtensions", "rp": "TaskManager.Api_HostBuilderExtensions.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 16, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Api.Extensions.ServiceCollectionExtensions", "rp": "TaskManager.Api_ServiceCollectionExtensions.html", "cl": 29, "ucl": 0, "cal": 29, "tl": 49, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Api.Middleware.ExceptionMiddleware", "rp": "TaskManager.Api_ExceptionMiddleware.html", "cl": 10, "ucl": 27, "cal": 37, "tl": 60, "cb": 0, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
   {
     "name": "TaskManager.Application",
     "classes": [
+      { "name": "TaskManager.Application.DTOs.CreateProjectRequest", "rp": "TaskManager.Application_CreateProjectRequest.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 4, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Application.DTOs.CreateUserDto", "rp": "TaskManager.Application_CreateUserDto.html", "cl": 2, "ucl": 0, "cal": 2, "tl": 9, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Application.DTOs.TaskResponseDto", "rp": "TaskManager.Application_TaskResponseDto.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 4, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Application.DTOs.UserDto", "rp": "TaskManager.Application_UserDto.html", "cl": 2, "ucl": 0, "cal": 2, "tl": 10, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Application.UseCases.AddTaskCommentHandler", "rp": "TaskManager.Application_AddTaskCommentHandler.html", "cl": 31, "ucl": 0, "cal": 31, "tl": 57, "cb": 1, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Application.Exceptions.NotFoundException", "rp": "TaskManager.Application_NotFoundException.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 9, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Application.UseCases.AddTaskCommentHandler", "rp": "TaskManager.Application_AddTaskCommentHandler.html", "cl": 36, "ucl": 2, "cal": 38, "tl": 57, "cb": 2, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Application.UseCases.Commands.AddTaskCommentCommand", "rp": "TaskManager.Application_AddTaskCommentCommand.html", "cl": 5, "ucl": 0, "cal": 5, "tl": 7, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Application.UseCases.Commands.CreateProjectCommand", "rp": "TaskManager.Application_CreateProjectCommand.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 3, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Application.UseCases.Commands.CreateTaskCommand", "rp": "TaskManager.Application_CreateTaskCommand.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 11, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
@@ -240,13 +245,13 @@ var assemblies = [
       { "name": "TaskManager.Application.UseCases.DeleteProjectHandler", "rp": "TaskManager.Application_DeleteProjectHandler.html", "cl": 12, "ucl": 3, "cal": 15, "tl": 30, "cb": 2, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Application.UseCases.DeleteTaskHandler", "rp": "TaskManager.Application_DeleteTaskHandler.html", "cl": 12, "ucl": 0, "cal": 12, "tl": 26, "cb": 1, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Application.UseCases.GetPerformanceReportHandler", "rp": "TaskManager.Application_GetPerformanceReportHandler.html", "cl": 20, "ucl": 0, "cal": 20, "tl": 34, "cb": 2, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Application.UseCases.GetProjectsByUserHandler", "rp": "TaskManager.Application_GetProjectsByUserHandler.html", "cl": 0, "ucl": 7, "cal": 7, "tl": 20, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Application.UseCases.GetTaskHistoryHandler", "rp": "TaskManager.Application_GetTaskHistoryHandler.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 21, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Application.UseCases.GetTasksByProjectHandler", "rp": "TaskManager.Application_GetTasksByProjectHandler.html", "cl": 0, "ucl": 7, "cal": 7, "tl": 20, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Application.UseCases.Queries.GetProjectsByUserQuery", "rp": "TaskManager.Application_GetProjectsByUserQuery.html", "cl": 0, "ucl": 1, "cal": 1, "tl": 9, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Application.UseCases.Queries.GetTaskHistoryQuery", "rp": "TaskManager.Application_GetTaskHistoryQuery.html", "cl": 0, "ucl": 1, "cal": 1, "tl": 3, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Application.UseCases.Queries.GetTasksByProjectQuery", "rp": "TaskManager.Application_GetTasksByProjectQuery.html", "cl": 0, "ucl": 1, "cal": 1, "tl": 3, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Application.UseCases.UpdateTaskHandler", "rp": "TaskManager.Application_UpdateTaskHandler.html", "cl": 34, "ucl": 1, "cal": 35, "tl": 112, "cb": 4, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Application.UseCases.GetProjectsByUserHandler", "rp": "TaskManager.Application_GetProjectsByUserHandler.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 20, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Application.UseCases.GetTaskHistoryHandler", "rp": "TaskManager.Application_GetTaskHistoryHandler.html", "cl": 8, "ucl": 0, "cal": 8, "tl": 21, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Application.UseCases.GetTasksByProjectHandler", "rp": "TaskManager.Application_GetTasksByProjectHandler.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 20, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Application.UseCases.Queries.GetProjectsByUserQuery", "rp": "TaskManager.Application_GetProjectsByUserQuery.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 9, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Application.UseCases.Queries.GetTaskHistoryQuery", "rp": "TaskManager.Application_GetTaskHistoryQuery.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 3, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Application.UseCases.Queries.GetTasksByProjectQuery", "rp": "TaskManager.Application_GetTasksByProjectQuery.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 3, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Application.UseCases.UpdateTaskHandler", "rp": "TaskManager.Application_UpdateTaskHandler.html", "cl": 76, "ucl": 4, "cal": 80, "tl": 112, "cb": 12, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Application.Validators.AddTaskCommentCommandValidator", "rp": "TaskManager.Application_AddTaskCommentCommandValidator.html", "cl": 0, "ucl": 10, "cal": 10, "tl": 20, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Application.Validators.CreateProjectCommandValidator", "rp": "TaskManager.Application_CreateProjectCommandValidator.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 14, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Application.Validators.CreateTaskCommandValidator", "rp": "TaskManager.Application_CreateTaskCommandValidator.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 20, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
@@ -257,23 +262,25 @@ var assemblies = [
   {
     "name": "TaskManager.Core",
     "classes": [
-      { "name": "TaskManager.Core.Entities.Project", "rp": "TaskManager.Core_Project.html", "cl": 6, "ucl": 1, "cal": 7, "tl": 14, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Core.Entities.Project", "rp": "TaskManager.Core_Project.html", "cl": 4, "ucl": 1, "cal": 5, "tl": 14, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Core.Entities.TaskComment", "rp": "TaskManager.Core_TaskComment.html", "cl": 5, "ucl": 0, "cal": 5, "tl": 10, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Core.Entities.TaskHistory", "rp": "TaskManager.Core_TaskHistory.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 12, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Core.Entities.TaskItem", "rp": "TaskManager.Core_TaskItem.html", "cl": 9, "ucl": 1, "cal": 10, "tl": 17, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Core.Entities.TaskUpdateHistory", "rp": "TaskManager.Core_TaskUpdateHistory.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 12, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Core.Entities.User", "rp": "TaskManager.Core_User.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 9, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
   {
     "name": "TaskManager.Infrastructure",
     "classes": [
-      { "name": "TaskManager.Infrastructure.Data.AppDbContext", "rp": "TaskManager.Infrastructure_AppDbContext.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 16, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Infrastructure.Data.AppDbContext", "rp": "TaskManager.Infrastructure_AppDbContext.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 16, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Infrastructure.Data.InMemoryUserRepository", "rp": "TaskManager.Infrastructure_InMemoryUserRepository.html", "cl": 0, "ucl": 10, "cal": 10, "tl": 23, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Infrastructure.Data.ProjectRepository", "rp": "TaskManager.Infrastructure_ProjectRepository.html", "cl": 13, "ucl": 13, "cal": 26, "tl": 48, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Infrastructure.Data.TaskCommentRepository", "rp": "TaskManager.Infrastructure_TaskCommentRepository.html", "cl": 7, "ucl": 6, "cal": 13, "tl": 29, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Infrastructure.Data.TaskHistoryRepository", "rp": "TaskManager.Infrastructure_TaskHistoryRepository.html", "cl": 10, "ucl": 3, "cal": 13, "tl": 29, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Infrastructure.Data.TaskRepository", "rp": "TaskManager.Infrastructure_TaskRepository.html", "cl": 8, "ucl": 21, "cal": 29, "tl": 51, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Infrastructure.Data.UnitOfWork", "rp": "TaskManager.Infrastructure_UnitOfWork.html", "cl": 0, "ucl": 7, "cal": 7, "tl": 18, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Infrastructure.Data.UnitOfWork", "rp": "TaskManager.Infrastructure_UnitOfWork.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 18, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "TaskManager.Infrastructure.Data.UserRepository", "rp": "TaskManager.Infrastructure_UserRepository.html", "cl": 8, "ucl": 6, "cal": 14, "tl": 32, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Infrastructure.Migrations.AppDbContextModelSnapshot", "rp": "TaskManager.Infrastructure_AppDbContextModelSnapshot.html", "cl": 183, "ucl": 0, "cal": 183, "tl": 216, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "TaskManager.Infrastructure.Migrations.InitialCreate", "rp": "TaskManager.Infrastructure_InitialCreate.html", "cl": 0, "ucl": 307, "cal": 307, "tl": 370, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Infrastructure.Migrations.AppDbContextModelSnapshot", "rp": "TaskManager.Infrastructure_AppDbContextModelSnapshot.html", "cl": 0, "ucl": 183, "cal": 183, "tl": 216, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "TaskManager.Infrastructure.Migrations.InitialCreate", "rp": "TaskManager.Infrastructure_InitialCreate.html", "cl": 0, "ucl": 307, "cal": 307, "tl": 372, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 
@@ -282,9 +289,23 @@ var metrics = [{ "name": "Crap Score", "abbreviation": "crp", "explanationUrl": 
 var historicCoverageExecutionTimes = [];
 
 var riskHotspotMetrics = [
+      { "name": "Crap Score", "explanationUrl": "https://googletesting.blogspot.de/2011/02/this-code-is-crap.html" },
+      { "name": "Cyclomatic complexity", "explanationUrl": "https://en.wikipedia.org/wiki/Cyclomatic_complexity" },
 ];
 
 var riskHotspots = [
+  {
+    "assembly": "TaskManager.Api", "class": "TaskManager.Api.Middleware.ExceptionMiddleware", "reportPath": "TaskManager.Api_ExceptionMiddleware.html", "methodName": "GetStatusCode(System.Exception)", "methodShortName": "GetStatusCode(...)", "fileIndex": 0, "line": 43,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "TaskManager.Api", "class": "TaskManager.Api.Middleware.ExceptionMiddleware", "reportPath": "TaskManager.Api_ExceptionMiddleware.html", "methodName": "GetErrorMessage(System.Exception)", "methodShortName": "GetErrorMessage(...)", "fileIndex": 0, "line": 52,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
 ];
 
 var branchCoverageAvailable = true;

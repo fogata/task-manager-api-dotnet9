@@ -28,6 +28,11 @@
   <ItemGroup>
     <ProjectReference Include="..\TaskManager.Application\TaskManager.Application.csproj" />
     <ProjectReference Include="..\TaskManager.Core\TaskManager.Core.csproj" />
+    <ProjectReference Include="..\TaskManager.Infrastructure\TaskManager.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>

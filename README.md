@@ -104,8 +104,8 @@ Para garantir a precisão do relatório e evitar conflitos com arquivos antigos:
 dotnet clean
 Remove-Item -Recurse -Force .\coverage-report
 Get-ChildItem -Path . -Filter coverage.cobertura.xml -Recurse | Remove-Item -Force
-dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+dotnet test --collect:"XPlat Code Coverage"
 reportgenerator -reports:**/coverage.cobertura.xml -targetdir:coverage-report -reporttypes:Html
 ```
 
-📁 O relatório será gerado na pasta `coverage-report/index.html`. Basta abrir esse arquivo no navegador para visualizar a cobertura de testes da aplicação.
+📁 O relatório será gerado na pasta `coverage-report/index.html` (o relatório vai ficar na pasta que foi executado os comandos). Basta abrir esse arquivo no navegador para visualizar a cobertura de testes da aplicação.
