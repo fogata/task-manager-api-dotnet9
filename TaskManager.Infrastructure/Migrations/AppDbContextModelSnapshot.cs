@@ -65,7 +65,7 @@ namespace TaskManager.Infrastructure.Migrations
 
                     b.HasIndex("TaskItemId");
 
-                    b.ToTable("TaskComment");
+                    b.ToTable("TaskComments");
                 });
 
             modelBuilder.Entity("TaskManager.Core.Entities.TaskHistory", b =>

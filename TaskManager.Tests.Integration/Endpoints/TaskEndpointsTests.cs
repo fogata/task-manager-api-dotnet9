@@ -21,12 +21,15 @@ public class TaskEndpointsTests : IClassFixture<WebApplicationFactory<Program>>
         var userResponse = await _client.PostAsJsonAsync("/users", user);
         var createdUser = await userResponse.Content.ReadFromJsonAsync<UserResponse>();
 
-        var projectResponse = await _client.PostAsJsonAsync($"/users/{createdUser!.Id}/projects", "Projeto com Tarefa");
-
+        var projetoPayload = new { Name = "Projeto com Tarefa" };
+        var projectResponse = await _client.PostAsJsonAsync($"/users/{createdUser!.Id}/projects", projetoPayload);
+        
         var createdProject = await projectResponse.Content.ReadFromJsonAsync<ProjectResponse>();
 
         var task = new { Title = "Minha Tarefa", Description = "Descrição", Priority = "Alta", DueDate = DateTime.UtcNow.AddDays(1) };
         var taskResponse = await _client.PostAsJsonAsync($"/projects/{createdProject!.Id}/tasks", task);
+       
+
         if (taskResponse.StatusCode != HttpStatusCode.Created)
         {
             var error = await taskResponse.Content.ReadAsStringAsync();

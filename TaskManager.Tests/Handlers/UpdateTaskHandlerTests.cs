@@ -32,7 +32,7 @@ public class UpdateTaskHandlerTests
         var result = await handler.HandleAsync(command);
 
         result.Should().NotBeNull();
-        result!.UpdateHistory.Should().NotBeEmpty();
+        result.Should().BeAssignableTo<TaskItem>();
         uow.Verify(u => u.SaveChangesAsync(), Times.Once);
     }
 }

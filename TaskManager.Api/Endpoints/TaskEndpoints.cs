@@ -1,10 +1,8 @@
 ﻿using FluentValidation;
-using System.Threading.Tasks;
 using TaskManager.Application.DTOs;
 using TaskManager.Application.UseCases;
 using TaskManager.Application.UseCases.Commands;
 using TaskManager.Application.UseCases.Queries;
-using TaskManager.Core.Entities;
 
 namespace TaskManager.Api.Endpoints;
 
@@ -77,6 +75,10 @@ public static class TaskEndpoints
                         return Results.BadRequest(validation.Errors);
 
                     var result = await handler.HandleAsync(query);
+
+                    if(result is null || !result.Any())
+                        return Results.NotFound();
+
                     return Results.Ok(result);
                 })
              .WithName("GetTaskHistory")
@@ -94,7 +96,7 @@ public static class TaskEndpoints
                         return Results.BadRequest(validation.Errors);
 
                     var success = await handler.HandleAsync(command);
-                    return success ? Results.Ok() : Results.NotFound();
+                    return success is not null ? Results.Ok() : Results.NotFound();
                 })
                     .WithName("AddTaskComment")
                     .WithSummary("Adiciona um comentário a uma tarefa e registra no histórico");

@@ -11,5 +11,6 @@ public class AppDbContext : DbContext
     public DbSet<Project> Projects => Set<Project>();
     public DbSet<TaskItem> TaskItems => Set<TaskItem>();
     public DbSet<TaskHistory> TaskHistories { get; set; } = default!;
+    public DbSet<TaskComment> TaskComments { get; set; } = default!;
 
 }

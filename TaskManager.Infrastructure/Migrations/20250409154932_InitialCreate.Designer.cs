@@ -12,7 +12,7 @@ using TaskManager.Infrastructure.Data;
 namespace TaskManager.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250409140434_InitialCreate")]
+    [Migration("20250409154932_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -68,7 +68,7 @@ namespace TaskManager.Infrastructure.Migrations
 
                     b.HasIndex("TaskItemId");
 
-                    b.ToTable("TaskComment");
+                    b.ToTable("TaskComments");
                 });
 
             modelBuilder.Entity("TaskManager.Core.Entities.TaskHistory", b =>

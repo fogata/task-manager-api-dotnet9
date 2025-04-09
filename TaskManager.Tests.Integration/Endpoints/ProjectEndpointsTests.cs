@@ -21,7 +21,9 @@ public class ProjectEndpointsTests : IClassFixture<WebApplicationFactory<Program
         var userResponse = await _client.PostAsJsonAsync("/users", user);
         var createdUser = await userResponse.Content.ReadFromJsonAsync<UserResponse>();
 
-        var response = await _client.PostAsJsonAsync($"/users/{createdUser!.Id}/projects","Projeto Teste");
+        var projetoPayload = new { Name = "Projeto Teste" };
+        var response = await _client.PostAsJsonAsync($"/users/{createdUser!.Id}/projects", projetoPayload);
+
 
         if (response.StatusCode != HttpStatusCode.Created)
         {
