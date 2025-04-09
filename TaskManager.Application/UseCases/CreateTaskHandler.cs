@@ -5,19 +5,8 @@ using TaskManager.Core.Interfaces;
 
 namespace TaskManager.Application.UseCases;
 
-public class CreateTaskHandler
+public class CreateTaskHandler(ITaskRepository _taskRepo, IProjectRepository _projectRepo, ILogger<CreateTaskHandler> _logger)
 {
-    private readonly ITaskRepository _taskRepo;
-    private readonly IProjectRepository _projectRepo;
-    private readonly ILogger<CreateTaskHandler> _logger;
-
-    public CreateTaskHandler(ITaskRepository taskRepo, IProjectRepository projectRepo, ILogger<CreateTaskHandler> logger)
-    {
-        _taskRepo = taskRepo;
-        _projectRepo = projectRepo;
-        _logger = logger;
-    }
-
     public async Task<TaskItem> HandleAsync(CreateTaskCommand command)
     {
         var project = await _projectRepo.GetByIdAsync(command.ProjectId);

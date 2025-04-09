@@ -4,15 +4,8 @@ using TaskManager.Core.Interfaces;
 
 namespace TaskManager.Application.UseCases;
 
-public class GetTaskHistoryHandler
+public class GetTaskHistoryHandler(ITaskHistoryRepository _repository)
 {
-    private readonly ITaskHistoryRepository _repository;
-
-    public GetTaskHistoryHandler(ITaskHistoryRepository repository)
-    {
-        _repository = repository;
-    }
-
     public async Task<IEnumerable<TaskHistory>> HandleAsync(GetTaskHistoryQuery query)
     {
         var task = await _repository.GetByTaskIdAsync(query.TaskId);

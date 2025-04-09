@@ -5,19 +5,8 @@ using TaskManager.Core.Interfaces;
 
 namespace TaskManager.Application.UseCases;
 
-public class UpdateTaskHandler
+public class UpdateTaskHandler(ITaskRepository _taskRepository, ITaskHistoryRepository _taskHistoryRepository, IUnitOfWork _unitOfWork)
 {
-    private readonly ITaskRepository _taskRepository;
-    private readonly ITaskHistoryRepository _taskHistoryRepository;
-    private readonly IUnitOfWork _unitOfWork;
-
-    public UpdateTaskHandler(ITaskRepository repository, ITaskHistoryRepository taskHistoryRepository, IUnitOfWork unitOfWork)
-    {
-        _taskRepository = repository;
-        _taskHistoryRepository = taskHistoryRepository;
-        _unitOfWork = unitOfWork;
-    }
-
     public async Task<TaskItem> HandleAsync(UpdateTaskCommand command)
     {
         var task = await _taskRepository.GetByIdAsync(command.TaskId);

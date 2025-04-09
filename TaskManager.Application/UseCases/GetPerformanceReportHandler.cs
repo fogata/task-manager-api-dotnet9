@@ -2,17 +2,8 @@
 
 namespace TaskManager.Application.UseCases;
 
-public class GetPerformanceReportHandler
+public class GetPerformanceReportHandler(ITaskRepository _taskRepository, IUserRepository _userRepository)
 {
-    private readonly ITaskRepository _taskRepository;
-    private readonly IUserRepository _userRepository;
-
-    public GetPerformanceReportHandler(ITaskRepository taskRepository, IUserRepository userRepository)
-    {
-        _taskRepository = taskRepository;
-        _userRepository = userRepository;
-    }
-
     public async Task<IEnumerable<object>> HandleAsync()
     {
         var allUsers = await _userRepository.GetAllAsync();

@@ -4,14 +4,8 @@ using TaskManager.Core.Interfaces;
 
 namespace TaskManager.Application.UseCases;
 
-public class GetProjectsByUserHandler
+public class GetProjectsByUserHandler(IProjectRepository _repository)
 {
-    private readonly IProjectRepository _repository;
-
-    public GetProjectsByUserHandler(IProjectRepository repository)
-    {
-        _repository = repository;
-    }
 
     public async Task<IEnumerable<Project>> HandleAsync(GetProjectsByUserQuery query)
     {

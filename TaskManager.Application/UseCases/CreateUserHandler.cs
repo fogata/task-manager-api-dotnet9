@@ -6,17 +6,8 @@ using TaskManager.Core.Interfaces;
 
 namespace TaskManager.Application.UseCases;
 
-public class CreateUserHandler
+public class CreateUserHandler(IUserRepository _repository, ILogger<CreateUserHandler> _logger)
 {
-    private readonly IUserRepository _repository;
-    private readonly ILogger<CreateUserHandler> _logger;
-
-    public CreateUserHandler(IUserRepository repository, ILogger<CreateUserHandler> logger)
-    {
-        _repository = repository;
-        _logger = logger;
-    }
-
     public async Task<UserDto> HandleAsync(CreateUserCommand command)
     {
         var user = (User)command.Dto;

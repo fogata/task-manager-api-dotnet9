@@ -5,17 +5,8 @@ using TaskManager.Core.Interfaces;
 
 namespace TaskManager.Application.UseCases;
 
-public class CreateProjectHandler
+public class CreateProjectHandler(IProjectRepository _repository, ILogger<CreateProjectHandler> _logger)
 {
-    private readonly IProjectRepository _repository;
-    private readonly ILogger<CreateProjectHandler> _logger;
-
-    public CreateProjectHandler(IProjectRepository repository, ILogger<CreateProjectHandler> logger)
-    {
-        _repository = repository;
-        _logger = logger;
-    }
-
     public async Task<Project> HandleAsync(CreateProjectCommand command)
     {
         var project = new Project

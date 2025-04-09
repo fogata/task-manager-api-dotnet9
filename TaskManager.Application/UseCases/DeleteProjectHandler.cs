@@ -3,17 +3,8 @@ using TaskManager.Core.Interfaces;
 
 namespace TaskManager.Application.UseCases;
 
-public class DeleteProjectHandler
+public class DeleteProjectHandler(IProjectRepository _projectRepo, IUnitOfWork _unitOfWork)
 {
-    private readonly IProjectRepository _projectRepo;
-    private readonly IUnitOfWork _unitOfWork;
-
-    public DeleteProjectHandler(IProjectRepository projectRepo, IUnitOfWork unitOfWork)
-    {
-        _projectRepo = projectRepo;
-        _unitOfWork = unitOfWork;
-    }
-
     public async Task<(bool Success, string Message)> HandleAsync(DeleteProjectCommand command)
     {
         var project = await _projectRepo.GetByIdAsync(command.ProjectId);

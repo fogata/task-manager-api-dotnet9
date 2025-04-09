@@ -3,16 +3,8 @@ using TaskManager.Core.Interfaces;
 
 namespace TaskManager.Application.UseCases;
 
-public class DeleteTaskHandler
+public class DeleteTaskHandler(ITaskRepository _taskRepo, IUnitOfWork _unitOfWork)
 {
-    private readonly ITaskRepository _taskRepo;
-    private readonly IUnitOfWork _unitOfWork;
-
-    public DeleteTaskHandler(ITaskRepository taskRepo, IUnitOfWork unitOfWork)
-    {
-        _taskRepo = taskRepo;
-        _unitOfWork = unitOfWork;
-    }
 
     public async Task<bool> HandleAsync(DeleteTaskCommand command)
     {
