@@ -1,4 +1,4 @@
-using FluentValidation;
+﻿using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using TaskManager.Api.Endpoints;
@@ -17,7 +17,7 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 builder.Host.UseSerilog();
 
-// Configura��es e servi�os
+// Configurações e serviços
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -25,7 +25,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
 
-// Reposit�rios
+// Repositórios
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
@@ -64,3 +64,5 @@ app.MapReportEndpoints();
 await app.EnsureDatabaseMigratedAsync();
 
 app.Run();
+
+public partial class Program { } // ← usado nos testes de integração.

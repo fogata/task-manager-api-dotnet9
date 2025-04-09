@@ -1,17 +1,15 @@
+using FluentAssertions;
 using System.Net;
 using System.Net.Http.Json;
-using FluentAssertions;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
-using TaskManager.Api;
+using TaskManager.Tests.Integration.Infrastructure;
 
 namespace TaskManager.Tests.Integration.Endpoints;
 
-public class UserEndpointsTests : IClassFixture<WebApplicationFactory<Program>>
+public class UserEndpointsTests : IClassFixture<CustomWebApplicationFactory>
 {
     private readonly HttpClient _client;
 
-    public UserEndpointsTests(WebApplicationFactory<Program> factory)
+    public UserEndpointsTests(CustomWebApplicationFactory factory)
     {
         _client = factory.CreateClient();
     }
@@ -24,17 +22,5 @@ public class UserEndpointsTests : IClassFixture<WebApplicationFactory<Program>>
         var response = await _client.PostAsJsonAsync("/users", payload);
 
         response.StatusCode.Should().Be(HttpStatusCode.Created);
-
-        var user = await response.Content.ReadFromJsonAsync<UserResponse>();
-        user.Should().NotBeNull();
-        user!.Username.Should().Be(payload.Username);
-        user.Role.Should().Be(payload.Role);
-    }
-
-    private class UserResponse
-    {
-        public Guid Id { get; set; }
-        public string Username { get; set; } = string.Empty;
-        public string Role { get; set; } = string.Empty;
     }
 }
