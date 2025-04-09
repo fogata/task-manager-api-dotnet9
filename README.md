@@ -122,11 +122,46 @@ ENTRYPOINT ["./wait-for-postgres.sh", "db", "dotnet", "TaskManager.Api.dll"]
 
 ## 🧪 Testes automatizados
 
-Todos os handlers e validadores possuem testes unitários escritos com:
+O projeto possui cobertura ampla de testes unitários para:
+- Handlers (Create, Update, Delete, Comment, Report)
+- Validadores (com FluentValidation.TestHelper)
+
+### Ferramentas utilizadas:
 - xUnit
 - FluentAssertions
-- FluentValidation.TestHelper
 - Moq
+- FluentValidation.TestHelper
+
+### Como executar testes com cobertura
+
+1. Instale o coletor de cobertura:
+```bash
+dotnet add TaskManager.Tests package coverlet.collector
+```
+
+2. Execute os testes com coleta de cobertura:
+```bash
+dotnet test --collect:"XPlat Code Coverage"
+```
+
+3. Instale o report generator (caso ainda não tenha):
+```bash
+dotnet tool install --global dotnet-reportgenerator-globaltool
+```
+
+4. Gere o relatório HTML:
+```bash
+reportgenerator -reports:"**/coverage.cobertura.xml" -targetdir:coverage-report -reporttypes:Html
+```
+
+5. Abra no navegador:
+```bash
+start coverage-report/index.html  # Windows
+open coverage-report/index.html   # macOS
+xdg-open coverage-report/index.html # Linux
+```
+
+> A cobertura atual estimada está entre **75% e 85%**, com foco nos handlers e validações. Pode ser estendida com testes de integração.
 
 ---
 
