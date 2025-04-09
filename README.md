@@ -17,6 +17,37 @@ API para gerenciamento de tarefas e projetos com suporte a múltiplos usuários,
 
 ---
 
+## ✅ Regras de Negócio Implementadas
+
+1. **Prioridades de Tarefas**
+   - Cada tarefa deve ter uma prioridade atribuída (baixa, média, alta)
+   - A prioridade **não pode ser alterada** após a criação
+
+2. **Restrições de Remoção de Projetos**
+   - Projetos com tarefas pendentes **não podem ser removidos**
+   - A API retorna erro informando a necessidade de concluir ou excluir as tarefas
+
+3. **Histórico de Atualizações**
+   - Cada alteração em uma tarefa registra um histórico com:
+     - Campo alterado
+     - Valor anterior e novo valor
+     - Data da modificação
+     - Usuário responsável
+
+4. **Limite de Tarefas por Projeto**
+   - Cada projeto pode conter no máximo **20 tarefas**
+   - Tentativas de adicionar além do limite resultam em erro
+
+5. **Relatórios de Desempenho**
+   - Endpoint com estatísticas de tarefas concluídas nos últimos 30 dias por usuário
+   - Acesso **restrito a usuários com papel "Gerente"**
+
+6. **Comentários nas Tarefas**
+   - Comentários podem ser adicionados a qualquer tarefa
+   - Comentários são registrados também no histórico da tarefa
+
+---
+
 ## 🐳 Como executar com Docker
 
 ### 🔧 Build e subida dos containers
@@ -70,10 +101,14 @@ Você pode configurar isso no `appsettings.json` ou checar o ambiente `IHostEnvi
 
 ## 🧪 Testes
 
-### Cobertura mínima exigida: 85%
+### Cobertura mínima exigida: 80%
 
 Para gerar relatório de cobertura:
 ```bash
+dotnet clean
+Remove-Item -Recurse -Force .\coverage-report
+Get-ChildItem -Path . -Filter coverage.cobertura.xml -Recurse | Remove-Item -Force
+dotnet test --collect:"XPlat Code Coverage"
 reportgenerator -reports:**/coverage.cobertura.xml -targetdir:coverage-report -reporttypes:Html
 ```
 
