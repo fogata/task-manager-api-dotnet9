@@ -13,5 +13,5 @@ public class TaskItem
     public Guid ProjectId { get; set; }
     public Project? Project { get; set; }
     public ICollection<TaskComment> Comments { get; set; } = new List<TaskComment>();
-    public ICollection<TaskUpdateHistory> UpdateHistory { get; set; } = new List<TaskUpdateHistory>();
+    public ICollection<TaskHistory> UpdateHistory { get; set; } = new List<TaskHistory>();
 }

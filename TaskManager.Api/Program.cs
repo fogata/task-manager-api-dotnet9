@@ -1,6 +1,8 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Http.Json;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using System.Text.Json.Serialization;
 using TaskManager.Api.Endpoints;
 using TaskManager.Api.Infrastructure.Startup;
 using TaskManager.Application.UseCases;
@@ -29,6 +31,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
+builder.Services.AddScoped<ITaskHistoryRepository, TaskHistoryRepository>();
+
 
 // Handlers
 builder.Services.AddScoped<CreateUserHandler>();
@@ -43,10 +47,17 @@ builder.Services.AddScoped<AddTaskCommentHandler>();
 builder.Services.AddScoped<GetPerformanceReportHandler>();
 builder.Services.AddScoped<GetTaskHistoryHandler>();
 
+
+//Validator
 builder.Services.AddValidatorsFromAssemblyContaining<CreateProjectCommandValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<CreateUserCommandValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<CreateTaskCommandValidator>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.Configure<JsonOptions>(options =>
+{
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
 
 var app = builder.Build();
 

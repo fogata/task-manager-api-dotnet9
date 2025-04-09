@@ -88,7 +88,7 @@ namespace TaskManager.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TaskUpdateHistory",
+                name: "TaskHistories",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -101,9 +101,9 @@ namespace TaskManager.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TaskUpdateHistory", x => x.Id);
+                    table.PrimaryKey("PK_TaskHistories", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TaskUpdateHistory_TaskItems_TaskItemId",
+                        name: "FK_TaskHistories_TaskItems_TaskItemId",
                         column: x => x.TaskItemId,
                         principalTable: "TaskItems",
                         principalColumn: "Id",
@@ -121,14 +121,14 @@ namespace TaskManager.Infrastructure.Migrations
                 column: "TaskItemId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_TaskHistories_TaskItemId",
+                table: "TaskHistories",
+                column: "TaskItemId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_TaskItems_ProjectId",
                 table: "TaskItems",
                 column: "ProjectId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TaskUpdateHistory_TaskItemId",
-                table: "TaskUpdateHistory",
-                column: "TaskItemId");
         }
 
         /// <inheritdoc />
@@ -138,7 +138,7 @@ namespace TaskManager.Infrastructure.Migrations
                 name: "TaskComment");
 
             migrationBuilder.DropTable(
-                name: "TaskUpdateHistory");
+                name: "TaskHistories");
 
             migrationBuilder.DropTable(
                 name: "TaskItems");

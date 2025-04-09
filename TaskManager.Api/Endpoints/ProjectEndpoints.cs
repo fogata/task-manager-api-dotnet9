@@ -1,4 +1,6 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
+using TaskManager.Application.DTOs;
 using TaskManager.Application.UseCases;
 using TaskManager.Application.UseCases.Commands;
 using TaskManager.Application.UseCases.Queries;
@@ -11,11 +13,11 @@ public static class ProjectEndpoints
     {
         app.MapPost("/users/{userId}/projects", async (
             Guid userId,
-            string name,
+            CreateProjectRequest request,
             CreateProjectHandler handler,
             IValidator<CreateProjectCommand> validator) =>
         {
-            var command = new CreateProjectCommand(userId, name);
+            var command = new CreateProjectCommand(userId, request.name);
             var validation = await validator.ValidateAsync(command);
             if (!validation.IsValid)
                 return Results.BadRequest(validation.Errors);

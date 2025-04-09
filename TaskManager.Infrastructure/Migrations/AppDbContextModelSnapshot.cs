@@ -68,6 +68,40 @@ namespace TaskManager.Infrastructure.Migrations
                     b.ToTable("TaskComment");
                 });
 
+            modelBuilder.Entity("TaskManager.Core.Entities.TaskHistory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Field")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("NewValue")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("OldValue")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("TaskItemId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TaskItemId");
+
+                    b.ToTable("TaskHistories");
+                });
+
             modelBuilder.Entity("TaskManager.Core.Entities.TaskItem", b =>
                 {
                     b.Property<Guid>("Id")
@@ -99,40 +133,6 @@ namespace TaskManager.Infrastructure.Migrations
                     b.HasIndex("ProjectId");
 
                     b.ToTable("TaskItems");
-                });
-
-            modelBuilder.Entity("TaskManager.Core.Entities.TaskUpdateHistory", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Field")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("NewValue")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("OldValue")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("TaskItemId")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TaskItemId");
-
-                    b.ToTable("TaskUpdateHistory");
                 });
 
             modelBuilder.Entity("TaskManager.Core.Entities.User", b =>
@@ -174,6 +174,15 @@ namespace TaskManager.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("TaskManager.Core.Entities.TaskHistory", b =>
+                {
+                    b.HasOne("TaskManager.Core.Entities.TaskItem", null)
+                        .WithMany("UpdateHistory")
+                        .HasForeignKey("TaskItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("TaskManager.Core.Entities.TaskItem", b =>
                 {
                     b.HasOne("TaskManager.Core.Entities.Project", "Project")
@@ -183,15 +192,6 @@ namespace TaskManager.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Project");
-                });
-
-            modelBuilder.Entity("TaskManager.Core.Entities.TaskUpdateHistory", b =>
-                {
-                    b.HasOne("TaskManager.Core.Entities.TaskItem", null)
-                        .WithMany("UpdateHistory")
-                        .HasForeignKey("TaskItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("TaskManager.Core.Entities.Project", b =>

@@ -1,7 +1,10 @@
 ﻿using FluentValidation;
+using System.Threading.Tasks;
+using TaskManager.Application.DTOs;
 using TaskManager.Application.UseCases;
 using TaskManager.Application.UseCases.Commands;
 using TaskManager.Application.UseCases.Queries;
+using TaskManager.Core.Entities;
 
 namespace TaskManager.Api.Endpoints;
 
@@ -21,7 +24,8 @@ public static class TaskEndpoints
                 return Results.BadRequest(validation.Errors);
 
             var result = await handler.HandleAsync(command);
-            return Results.Created($"/tasks/{result.Id}", result);
+            return Results.Created($"/projects/{result.Id}/tasks/{result.Id}", new TaskResponseDto(result.Id, result.Title, result.Priority.ToString(), result.ProjectId));
+            
         })
         .WithName("CreateTask")
         .WithSummary("Cria uma nova tarefa em um projeto específico");
@@ -94,5 +98,7 @@ public static class TaskEndpoints
                 })
                     .WithName("AddTaskComment")
                     .WithSummary("Adiciona um comentário a uma tarefa e registra no histórico");
+
+
     }
 }

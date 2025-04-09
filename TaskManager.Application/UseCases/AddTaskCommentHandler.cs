@@ -29,7 +29,7 @@ public class AddTaskCommentHandler
             TaskItemId = task.Id
         };
 
-        var history = new TaskUpdateHistory
+        var history = new TaskHistory
         {
             Id = Guid.NewGuid(),
             TaskItemId = task.Id,

@@ -1,6 +1,6 @@
 ﻿namespace TaskManager.Core.Entities;
 
-public class TaskUpdateHistory
+public class TaskHistory
 {
     public Guid Id { get; set; }
     public Guid TaskItemId { get; set; }

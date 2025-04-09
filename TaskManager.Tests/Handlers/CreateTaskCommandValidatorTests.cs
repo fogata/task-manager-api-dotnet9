@@ -11,7 +11,7 @@ public class CreateTaskCommandValidatorTests
     [Fact]
     public void Should_Have_Error_When_Fields_Are_Invalid()
     {
-        var command = new CreateTaskCommand(Guid.NewGuid(), "", "", DateTime.UtcNow.AddDays(-1), Core.Enums.TaskPriority.High);
+        var command = new CreateTaskCommand(Guid.NewGuid(), "", "", DateTime.UtcNow.AddDays(-1), Core.Enums.TaskPriority.Alta);
         var result = _validator.TestValidate(command);
 
         result.ShouldHaveValidationErrorFor(x => x.Title);
@@ -22,7 +22,7 @@ public class CreateTaskCommandValidatorTests
     [Fact]
     public void Should_Not_Have_Error_When_Valid()
     {
-        var command = new CreateTaskCommand(Guid.NewGuid(), "Bug", "Fix it", DateTime.UtcNow.AddDays(1), Core.Enums.TaskPriority.Medium);
+        var command = new CreateTaskCommand(Guid.NewGuid(), "Bug", "Fix it", DateTime.UtcNow.AddDays(1), Core.Enums.TaskPriority.Media);
         var result = _validator.TestValidate(command);
 
         result.ShouldNotHaveAnyValidationErrors();

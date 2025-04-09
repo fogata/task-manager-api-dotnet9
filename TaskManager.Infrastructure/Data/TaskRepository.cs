@@ -37,7 +37,7 @@ public class TaskRepository : ITaskRepository
     public async Task RemoveAsync(TaskItem task)
     {
         _context.TaskItems.Remove(task);
-        await Task.CompletedTask;
+        await _context.SaveChangesAsync();
     }
 
     public async Task<int> CountCompletedByUserLast30Days(Guid userId)

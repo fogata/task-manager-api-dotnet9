@@ -22,9 +22,11 @@ public class UpdateTaskHandlerTests
         };
 
         var repo = new Mock<ITaskRepository>();
+        var repoHist = new Mock<ITaskHistoryRepository>();
+        
         repo.Setup(r => r.GetByIdAsync(task.Id)).ReturnsAsync(task);
         var uow = new Mock<IUnitOfWork>();
-        var handler = new UpdateTaskHandler(repo.Object, uow.Object);
+        var handler = new UpdateTaskHandler(repo.Object, repoHist.Object, uow.Object);
 
         var command = new UpdateTaskCommand(task.Id, "New Title", "New Desc", task.DueDate.AddDays(1), "InProgress", Guid.NewGuid());
         var result = await handler.HandleAsync(command);

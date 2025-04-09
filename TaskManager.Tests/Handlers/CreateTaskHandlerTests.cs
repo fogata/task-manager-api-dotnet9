@@ -16,7 +16,7 @@ public class CreateTaskHandlerTests
         var projectRepo = new Mock<IProjectRepository>();
         var handler = new CreateTaskHandler(taskRepo.Object, projectRepo.Object, Mock.Of<ILogger<CreateTaskHandler>>());
 
-        var command = new CreateTaskCommand(Guid.NewGuid(), "Bug", "Fix", DateTime.UtcNow.AddDays(1), TaskPriority.High);
+        var command = new CreateTaskCommand(Guid.NewGuid(), "Bug", "Fix", DateTime.UtcNow.AddDays(1), TaskPriority.Alta);
         await Assert.ThrowsAsync<Exception>(() => handler.HandleAsync(command));
     }
 }
