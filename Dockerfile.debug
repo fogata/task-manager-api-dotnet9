@@ -1,0 +1,7 @@
+FROM mcr.microsoft.com/dotnet/sdk:9.0-preview AS debug
+WORKDIR /src
+
+# Apenas exibe a versão instalada
+RUN dotnet --info
+
+CMD ["dotnet", "--version"]
