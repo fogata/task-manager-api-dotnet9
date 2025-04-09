@@ -26,7 +26,7 @@ public class CreateProjectHandler
         };
 
         await _repository.AddAsync(project);
-        _logger.LogInformation("Projeto criado: {Name} (ID: {UserId})", project.Name, project.User.Id);
+        _logger.LogInformation("Projeto criado: {Name} (ID: {UserId})", project.Name, project.UserId);
         return project;
     }
 }
