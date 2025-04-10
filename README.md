@@ -54,6 +54,7 @@ API para gerenciamento de tarefas e projetos com suporte a múltiplos usuários,
 
 ```bash
 docker compose up -d --build
+dotnet ef database update -p TaskManager.Infrastructure -s TaskManager.Api
 ```
 
 A aplicação estará disponível em:
@@ -65,8 +66,12 @@ A aplicação estará disponível em:
 ## 🧪 Resetando o ambiente (limpa volumes e recompila)
 
 ```bash
-docker compose down -v
-docker compose up --build --no-cache -d
+docker compose down --volumes
+docker pull mcr.microsoft.com/dotnet/sdk:9.0
+docker pull mcr.microsoft.com/dotnet/aspnet:9.0
+docker compose build --no-cache
+docker compose up -d
+dotnet ef database update -p TaskManager.Infrastructure -s TaskManager.Api
 ```
 
 ---
@@ -144,3 +149,14 @@ reportgenerator -reports:**/coverage.cobertura.xml -targetdir:coverage-report -r
 ```
 
 📁 O relatório será gerado na pasta `coverage-report/index.html` (o relatório vai ficar na pasta que foi executado os comandos). Basta abrir esse arquivo no navegador para visualizar a cobertura de testes da aplicação.
+
+---
+
+### 📄 Licença de Uso Não Comercial
+
+Este projeto é disponibilizado **exclusivamente para fins de estudo e uso não comercial**.  
+Qualquer redistribuição, comercialização, revenda, ou uso em produtos finais com fins lucrativos **é estritamente proibido sem autorização prévia**.
+
+O código-fonte e demais artefatos estão protegidos sob as leis internacionais de **direito autoral de software (copyright)**. O autor se reserva o direito de tomar medidas legais cabíveis em caso de uso indevido.
+
+📬 Para solicitações de uso comercial, parcerias ou dúvidas, entre em contato: **felipeogata@gmail.com**
